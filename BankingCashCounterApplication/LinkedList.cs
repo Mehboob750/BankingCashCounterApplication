@@ -26,7 +26,7 @@ namespace BankingCashCounterApplication
         }
 
         //To check the LinkedList is Empty or Not
-        public bool isEmpty()
+        public bool IsEmpty()
         {
             if (head == null)
                 return true;
@@ -34,7 +34,7 @@ namespace BankingCashCounterApplication
         }
 
         //To insert the data in LinkedList 
-        public Node insertData(string name, double cash)
+        public Node InsertData(string name, double cash)
         {
             if (name != " " && cash != null && name != null)
             {
@@ -81,7 +81,7 @@ namespace BankingCashCounterApplication
         }
 
         //To remove the data from front
-        public Node remove()
+        public Node RemoveRecord()
         {
             Node firstPosition = head;
             Node secondPosition = firstPosition.next;
@@ -91,7 +91,7 @@ namespace BankingCashCounterApplication
         }
 
         //To print the element of linkedList
-        public void display()
+        public void DisplayAllRecords()
         {
             Node lastPosition = head;
             while (lastPosition != null)
