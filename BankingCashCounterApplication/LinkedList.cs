@@ -62,6 +62,24 @@ namespace BankingCashCounterApplication
             return head;
         }
 
+        //To check the Customer is present or not
+        public bool CheckCustomer(string name)
+        {
+            Node firstPosition = head;
+            if (head.name == name)
+                return true;
+            else
+            {
+                while (firstPosition != null)
+                {
+                    if (firstPosition.name == name)
+                        return true;
+                    firstPosition = firstPosition.next;
+                }
+            }
+            return false;
+        }
+
         //To remove the data from front
         public Node remove()
         {

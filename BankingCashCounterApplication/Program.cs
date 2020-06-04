@@ -10,9 +10,10 @@ namespace BankingCashCounterApplication
             LinkedList linkedList = new LinkedList();
             linkedList.insertData("Akshay Kumar", 35000);
             linkedList.insertData("Rahul Roy", 2000);
-            linkedList.insertData("Rahul Roy", 2000);
-            linkedList.remove();
+            linkedList.insertData("Rajesh Patil", 2000);
+            //linkedList.remove();
             Console.WriteLine(linkedList.isEmpty());
+            Console.WriteLine(linkedList.CheckCustomer("Akshay Kumar"));
             linkedList.display();
         }
     }
