@@ -14,11 +14,11 @@ namespace BankingCashCounterApplication
         public class Node
         {
             public String name;
-            public double cash;
+            public int cash;
             public Node next;
 
             public Node
-                 (string name, double cash)
+                 (string name, int cash)
             {
                 this.name = name;
                 this.cash = cash;
@@ -34,7 +34,7 @@ namespace BankingCashCounterApplication
         }
 
         //To insert the data in LinkedList 
-        public Node InsertData(string name, double cash)
+        public Node InsertRecord(string name, int cash)
         {
             if (name != " " && cash != null && name != null)
             {
@@ -88,6 +88,26 @@ namespace BankingCashCounterApplication
             head = secondPosition;
             head.next = secondPosition.next;
             return head;
+        }
+
+        public double UpdateBalance(string name, int amount)
+        {
+            Node firstPosition = head;
+            if (head.name == name)
+                return head.cash = ((head.cash) + amount);
+            else
+            {
+                while (firstPosition != null)
+                {
+                    if (firstPosition.name == name)
+                    {
+                        firstPosition.cash = firstPosition.cash + amount;
+                        break;
+                    }
+                    firstPosition = firstPosition.next;
+                }
+            }
+            return firstPosition.cash;
         }
 
         //To print the element of linkedList
