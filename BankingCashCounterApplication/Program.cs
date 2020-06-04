@@ -19,21 +19,30 @@ namespace BankingCashCounterApplication
             linkedList.InsertRecord("Vinit Hinge", 62000);
             linkedList.InsertRecord("Tushar Mahadik", 32000);
 
-            Console.WriteLine("Enter your Choice:");
-            Console.WriteLine("1.Cash Deposite");
-            Console.WriteLine("2.Cash Withdrawal");
-            int choice = Convert.ToInt32(Console.ReadLine());
-            switch (choice)
+            Console.WriteLine("Welcome To Bank Cash Counter");
+            int wantToContinue = 1;
+            while (wantToContinue!=0)
             {
-                case 1:
-                    BankingSimulation.CashDeposite(linkedList);
-                    break;
-                case 2:
-                    BankingSimulation.CashWithdrawal();
-                    break;
-                default:
-                    Console.WriteLine("Please Enter Valid Choice");
-                    break;
+                Console.WriteLine("Enter your Choice:");
+                Console.WriteLine("1.Cash Deposite");
+                Console.WriteLine("2.Cash Withdrawal");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        BankingSimulation.CashDeposite(linkedList);
+                        break;
+
+                    case 2:
+                        BankingSimulation.CashWithdrawal(linkedList);
+                        break;
+
+                    default:
+                        Console.WriteLine("Please Enter Valid Choice");
+                        break;
+                }
+                Console.WriteLine("Do you want to conitinue:?? 1/0");
+                wantToContinue = Convert.ToInt32(Console.ReadLine());
             }
         }
     }

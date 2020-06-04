@@ -62,6 +62,27 @@ namespace BankingCashCounterApplication
             return head;
         }
 
+        
+        public int WithdrawBalance(string name, int amount)
+        {
+            Node firstPosition = head;
+            while (firstPosition != null)
+            {
+                if (firstPosition.name == name)
+                {
+                    if (firstPosition.cash > amount)
+                    {
+                        firstPosition.cash = firstPosition.cash - amount;
+                        break;
+                    }
+                    else
+                     Console.WriteLine("Insufficient Balance!!!\n Please Enter Amount less than:"+firstPosition.cash);
+                }
+                firstPosition = firstPosition.next;
+            }
+            return firstPosition.cash;
+        }
+
         //To check the Customer is present or not
         public bool CheckCustomer(string name)
         {

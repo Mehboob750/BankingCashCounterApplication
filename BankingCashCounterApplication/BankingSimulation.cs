@@ -21,9 +21,19 @@ namespace BankingCashCounterApplication
                 Console.WriteLine("Please Enter Proper Name");
         }
 
-        public static void CashWithdrawal()
+        public static void CashWithdrawal(LinkedList linkedList)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enter your Name");
+            String name = Console.ReadLine();
+            if (linkedList.CheckCustomer(name) == true)
+            {
+                Console.WriteLine("Enter Amount You Want To WithDraw");
+                int amount = Convert.ToInt32(Console.ReadLine());
+                int balance = (int)linkedList.WithdrawBalance(name, amount);
+                Console.WriteLine("Your Current Balance After WithDraw is:\t" + balance);
+            }
+            else
+                Console.WriteLine("Please Enter Proper Name");
         }
     }
 }
