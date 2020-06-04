@@ -33,5 +33,34 @@ namespace BankingCashCounterApplication
             return false;
         }
 
+        //To insert the data in LinkedList 
+        public Node insertData(string name, double cash)
+        {
+            if (name != " " && cash != null && name != null)
+            {
+                Node newNode = new Node(name, cash);
+                newNode.next = null;
+
+                if (head == null)
+                {
+                    head = newNode;
+                }
+                else
+                {
+                    Node lastPosition = head;
+                    while (lastPosition.next != null)
+                    {
+                        lastPosition = lastPosition.next;
+                    }
+                    lastPosition.next = newNode;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please Enter Valid Data");
+            }
+            return head;
+        }
+
     }
 }
