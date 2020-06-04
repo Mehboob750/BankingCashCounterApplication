@@ -62,5 +62,15 @@ namespace BankingCashCounterApplication
             return head;
         }
 
+        //To print the element of linkedList
+        public void display()
+        {
+            Node lastPosition = head;
+            while (lastPosition != null)
+            {
+                Console.WriteLine("Name:"+ lastPosition.name + "\t"+"Balance:"+ lastPosition.cash);
+                lastPosition = lastPosition.next;
+            }
+        }
     }
 }

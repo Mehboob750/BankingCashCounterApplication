@@ -11,6 +11,7 @@ namespace BankingCashCounterApplication
             linkedList.insertData("Akshay Kumar", 35000);
             linkedList.insertData("Rahul Roy", 2000);
             Console.WriteLine(linkedList.isEmpty());
+            linkedList.display();
         }
     }
 }
