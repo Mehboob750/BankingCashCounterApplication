@@ -11,8 +11,7 @@ namespace BankingCashCounterApplication
         public static void CashDeposite(LinkedList linkedList)
         {
             string name = ReadName(linkedList);
-            Console.WriteLine("Enter Amount You Want To Deposite");
-            int amount = Convert.ToInt32(Console.ReadLine());
+            int amount = ReadAmount(linkedList);
             int balance = (int)linkedList.UpdateBalance(name, amount);
             Console.WriteLine("Your Current Balance After Deposite is:\t" + balance);
         }
@@ -20,8 +19,7 @@ namespace BankingCashCounterApplication
         public static void CashWithdrawal(LinkedList linkedList)
         {
             string name = ReadName(linkedList);
-            Console.WriteLine("Enter Amount You Want To WithDraw");
-            int amount = Convert.ToInt32(Console.ReadLine());
+            int amount = ReadAmount(linkedList);
             int balance = (int)linkedList.WithdrawBalance(name, amount);
             Console.WriteLine("Your Current Balance After WithDraw is:\t" + balance);
         }
@@ -41,5 +39,23 @@ namespace BankingCashCounterApplication
             return name;
         }
 
+        public static int ReadAmount(LinkedList linkedList)
+        {
+            Console.WriteLine("Enter Amount:");
+            int amount = Convert.ToInt32(Console.ReadLine());
+            return amount;
+        }
+
+        public static void CheckBalance(LinkedList linkedList)
+        {
+            string name = ReadName(linkedList);
+            if (linkedList.CheckCustomer(name))
+            {
+                int balance = linkedList.ShowBalance(name);
+                Console.WriteLine("Name:" + name + "\tBalance:" + balance);
+            }
+            else
+                Console.WriteLine("Please Enter Valid data");
+        }
     }
 }

@@ -9,7 +9,6 @@ namespace BankingCashCounterApplication
     public class LinkedList
     {
         Node head;
-        internal static bool checkCustomer;
 
         public class Node
         {
@@ -62,7 +61,7 @@ namespace BankingCashCounterApplication
             return head;
         }
 
-        
+        //To Update Balance After WithDraw Amount
         public int WithdrawBalance(string name, int amount)
         {
             Node firstPosition = head;
@@ -82,6 +81,23 @@ namespace BankingCashCounterApplication
                     }
                 }
                 firstPosition = firstPosition.next;
+            }
+            return firstPosition.cash;
+        }
+
+        public int ShowBalance(string name)
+        {
+            Node firstPosition = head;
+            if (head.name == name)
+                return head.cash;
+            else
+            {
+                while (firstPosition != null)
+                {
+                    if (firstPosition.name == name)
+                        break;
+                    firstPosition = firstPosition.next;
+                }
             }
             return firstPosition.cash;
         }
@@ -114,6 +130,7 @@ namespace BankingCashCounterApplication
             return head;
         }
 
+        //To Update Balance When We Deposite Some Amount
         public double UpdateBalance(string name, int amount)
         {
             Node firstPosition = head;

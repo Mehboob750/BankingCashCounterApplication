@@ -26,6 +26,7 @@ namespace BankingCashCounterApplication
                 Console.WriteLine("Enter your Choice:");
                 Console.WriteLine("1.Cash Deposite");
                 Console.WriteLine("2.Cash Withdrawal");
+                Console.WriteLine("3.Check Balance");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -35,6 +36,10 @@ namespace BankingCashCounterApplication
 
                     case 2:
                         BankingSimulation.CashWithdrawal(linkedList);
+                        break;
+
+                    case 3:
+                        BankingSimulation.CheckBalance(linkedList);
                         break;
 
                     default:
