@@ -62,6 +62,16 @@ namespace BankingCashCounterApplication
             return head;
         }
 
+        //To remove the data from front
+        public Node remove()
+        {
+            Node firstPosition = head;
+            Node secondPosition = firstPosition.next;
+            head = secondPosition;
+            head.next = secondPosition.next;
+            return head;
+        }
+
         //To print the element of linkedList
         public void display()
         {
