@@ -76,7 +76,10 @@ namespace BankingCashCounterApplication
                         break;
                     }
                     else
-                     Console.WriteLine("Insufficient Balance!!!\n Please Enter Amount less than:"+firstPosition.cash);
+                    {
+                        Console.WriteLine("Insufficient Balance!!!\n Please Enter Amount less than:" + firstPosition.cash);
+                        break;
+                    }
                 }
                 firstPosition = firstPosition.next;
             }
